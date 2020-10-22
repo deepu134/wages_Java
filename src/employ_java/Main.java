@@ -1,25 +1,27 @@
 package employ_java;
 
 public class Main{
+	private static final int IS_PRESENT=1;
+	private static final int EMP_RATE_PER_HOURS=20;
 	static void welcome() {
 		System.out.println("Employee Wage Computation");
 	}
-	static void PresentOrNot() {
+	static void EmployWages(){
+		int emphrs=0,empwages=0;
 		double random = Math.floor(Math.random() * 10 ) % 2;
-		int IS_PRESENT=1;
-		if(random==IS_PRESENT)
-		{
-			System.out.println("PRESENT");
+		if(random==IS_PRESENT){
+			emphrs=8;
+			}
+		else{
+			emphrs=0;//not present
 		}
-		else
-		{
-			System.out.println("ABSENT");
-		}
+		empwages=emphrs*EMP_RATE_PER_HOURS;
+		System.out.println("emp wages:" + empwages);
 	}
 	
 public static void main(String[] args) {
 	welcome();
 	Main obj1=new Main();
-	obj1.PresentOrNot();
+	obj1.EmployWages();
 }
 }

@@ -9,18 +9,18 @@ public class Main{
 	}
 	static void EmployWages(){
 		int EMP_HOURS=0,EMP_WAGES=0;
-		double random = Math.floor(Math.random() * 10 ) % 3;
-		if(random==IS_FULL_TIME){
-                EMP_HOURS=8;//full time
-        }
-        else if(random==IS_PART_TIME){
-                EMP_HOURS=4;//part time
-        }
-        else{
-                EMP_HOURS=0;//absent
-        }
-        EMP_WAGES=EMP_HOURS*EMP_RATE_PER_HOURS;
-        System.out.println("EMPLOY WAGES:" + EMP_WAGES);
+		int random = (int)Math.floor(Math.random() * 10 ) % 3;
+		switch (random){
+			case IS_FULL_TIME:	EMP_HOURS=8;//full time
+					break;
+		
+			case IS_PART_TIME: EMP_HOURS=4;//part time
+					break;
+			
+			default:EMP_HOURS=0;//not present
+		}
+		EMP_WAGES=EMP_HOURS*EMP_RATE_PER_HOURS;
+		System.out.println("EMPLOY WAGES:" + EMP_WAGES);
 	}
 	
 public static void main(String[] args) {
